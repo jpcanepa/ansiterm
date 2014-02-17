@@ -1,4 +1,4 @@
-## Rationale
+### What is this?
 
 Just that. For all your 
 
