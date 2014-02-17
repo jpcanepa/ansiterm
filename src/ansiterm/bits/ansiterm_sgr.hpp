@@ -1,5 +1,5 @@
-#ifndef ANSITERM_COLOR_H_
-#define ANSITERM_COLOR_H_
+#ifndef ANSITERM_SGR_H_
+#define ANSITERM_SGR_H_
 
 #include <ansiterm/bits/ansiterm_control.hpp>
 
