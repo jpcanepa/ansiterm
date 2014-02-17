@@ -206,8 +206,85 @@ std::ostream& white(std::ostream& s)
 }
 
 } /* namespace bg */
-
 } /* namespace color */
+
+namespace attribute
+{
+
+/*!\brief Modifiers. Those most widely supported, at least */
+enum ansi_attribute
+{
+    resetall  = 0,
+    bold      = 1,
+    underline = 4,
+    blink     = 5,
+
+    nobold      = 22,
+    nounderline = 24,
+    noblink     = 25
+};
+
+struct attribute_manipulator
+{
+    explicit 
+    attribute_manipulator(ansi_attribute attr)
+        : attribute_(attr)
+    {
+
+    }
+
+    ansi_attribute attribute() const { return attribute_; }
+
+private:
+    ansi_attribute attribute_;
+};
+
+std::ostream& operator<<(std::ostream& s, attribute_manipulator const& am)
+{
+    return s << csi << am.attribute() << sgr;
+}
+
+namespace style
+{
+
+std::ostream& reset(std::ostream& s)
+{
+    return s << attribute_manipulator(resetall);
+}
+
+std::ostream& bold(std::ostream& s)
+{
+    return s << attribute_manipulator(attribute::bold);
+}
+
+std::ostream& nobold(std::ostream& s)
+{
+    return s << attribute_manipulator(attribute::nobold);
+}
+
+std::ostream& underline(std::ostream& s)
+{
+    return s << attribute_manipulator(attribute::underline);
+}
+
+std::ostream& nounderline(std::ostream& s)
+{
+    return s << attribute_manipulator(attribute::nounderline);
+}
+
+std::ostream& blink(std::ostream& s)
+{
+    return s << attribute_manipulator(attribute::blink);
+}
+
+std::ostream& noblink(std::ostream& s)
+{
+    return s << attribute_manipulator(attribute::noblink);
+}
+
+} /* namespace style */
+} /* namespace attribute */
+
 } /* namespace ansi */
 
 #endif
