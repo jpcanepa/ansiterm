@@ -21,4 +21,4 @@ Most certainly. Don't really know. Don't really care. Read the previous point.
 ### License?
 Want to say _MIT_, but I haven't included the notice in any files, only the LICENSE file. That's not
 enough if I understand correctly, and I'll correct it if anyone ever cares enough to _use_ any of this 
-nonesense.
+nonsense.
