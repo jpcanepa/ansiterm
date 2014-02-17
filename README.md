@@ -17,3 +17,8 @@ for some reason, adding color to the output in a C++-esque way seemed like a goo
 
 ### Doesn't libX do the same, only better/sexier/faster?
 Most certainly. Don't really know. Don't really care. Read the previous point.
+
+### License?
+Want to say _MIT_, but I haven't included the notice in any files, only the LICENSE file. That's not
+enough if I understand correctly, and I'll correct it if anyone ever cares enough to _use_ any of this 
+nonesense.
