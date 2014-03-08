@@ -239,6 +239,7 @@ private:
     ansi_attribute attribute_;
 };
 
+inline
 std::ostream& operator<<(std::ostream& s, attribute_manipulator const& am)
 {
     return s << csi << am.attribute() << sgr;
@@ -247,36 +248,43 @@ std::ostream& operator<<(std::ostream& s, attribute_manipulator const& am)
 namespace style
 {
 
+inline
 std::ostream& reset(std::ostream& s)
 {
     return s << attribute_manipulator(resetall);
 }
 
+inline
 std::ostream& bold(std::ostream& s)
 {
     return s << attribute_manipulator(attribute::bold);
 }
 
+inline
 std::ostream& nobold(std::ostream& s)
 {
     return s << attribute_manipulator(attribute::nobold);
 }
 
+inline
 std::ostream& underline(std::ostream& s)
 {
     return s << attribute_manipulator(attribute::underline);
 }
 
+inline
 std::ostream& nounderline(std::ostream& s)
 {
     return s << attribute_manipulator(attribute::nounderline);
 }
 
+inline
 std::ostream& blink(std::ostream& s)
 {
     return s << attribute_manipulator(attribute::blink);
 }
 
+inline
 std::ostream& noblink(std::ostream& s)
 {
     return s << attribute_manipulator(attribute::noblink);
