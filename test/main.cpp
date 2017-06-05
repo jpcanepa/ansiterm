@@ -2,7 +2,7 @@
 
 #include <ansiterm/ansiterm.hpp>
 
-int main(int argc, char* argv[])
+int main()
 {
     using namespace ansi::color;
 
